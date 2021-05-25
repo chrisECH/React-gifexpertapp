@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import { AddCategory } from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
-export const GifExpertApp = () => {
+export const GifExpertApp = ({defaultCategories = []}) => {
 
 
-    const [categories, setCategories] = useState(['Vikingos'])
+    //const [categories, setCategories] = useState(['Vikingos']);
+    const [categories, setCategories] = useState(defaultCategories);
 
     return (
-        <>
+        <div className="container">
             <h2>GifExpertApp</h2>
             <AddCategory setCategories={setCategories}/>
             <hr />
@@ -24,6 +25,6 @@ export const GifExpertApp = () => {
                     ))
                 }
             </ol>
-        </>
+        </div>
     )
 }

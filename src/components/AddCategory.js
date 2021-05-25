@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
+import './styles/AddCategory.css';
 
 
 export const AddCategory = ({setCategories}) => {
@@ -7,6 +8,7 @@ export const AddCategory = ({setCategories}) => {
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
+
     }
 
     const handleSubmit = (e) => {
@@ -20,6 +22,7 @@ export const AddCategory = ({setCategories}) => {
     
     return (
         <form onSubmit={handleSubmit}>
+            
             <input 
                 type="text"
                 value = {inputValue}
@@ -30,6 +33,6 @@ export const AddCategory = ({setCategories}) => {
 }
 
 
-AddCategory.protoTypes = {
+AddCategory.propTypes = {
     setCategories: PropTypes.func.isRequired
 }
